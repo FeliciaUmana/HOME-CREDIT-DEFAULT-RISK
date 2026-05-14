@@ -6,7 +6,7 @@ import numpy as np
 
 app = FastAPI(
     title="Home Credit Default Risk API",
-    description="Predicts whether a loan applicant will default on their loan",
+    description="Home Credit is an international constomers finance provider that focuses on lending to people with little or no credit history. the goal is to Predict whether a loan applicant will default (fail to repay), using demographics, financial history, and external credit scores.",
     version="1.0.0"
 )
 
