@@ -11,3 +11,12 @@ https://home-credit-default-risk.onrender.com/
 
 #### HoW to Use it
 click on the POST request, then click on try it out and paste the applicant data, then click on excute to get your answer.
+
+
+✅ Machine Learning model trained
+✅ FastAPI deployed on Render
+✅ Frontend website live on Netlify
+✅ Everything connected and working
+
+#### this is the link to my live website, you can try it
+https://voluble-licorice-b21f97.netlify.app/
