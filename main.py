@@ -1,4 +1,5 @@
 from fastapi import FastAPI, HTTPException
+from fastapi.middleware.cors import CORSMiddleware
 from pydantic import BaseModel
 import joblib
 import pandas as pd
@@ -8,6 +9,13 @@ app = FastAPI(
     title="Home Credit Default Risk API",
     description="Home Credit is an international constomers finance provider that focuses on lending to people with little or no credit history. the goal is to Predict whether a loan applicant will default (fail to repay), using demographics, financial history, and external credit scores.",
     version="1.0.0"
+)
+app.add_middleware(
+    CORSMiddleware,
+    allow_origins=["*"],
+    allow_credentials=True,
+    allow_methods=["*"],
+    allow_headers=["*"],
 )
 
 # ============================================================
