@@ -632,7 +632,7 @@
 </footer>
 
 <script>
-  const API_URL = 'https://home-credit-default-risk.onrender.com/predict';
+  const API_URL = 'https://YOUR-APP-NAME.onrender.com/predict';
 
   const recommendations = {
     low: 'This applicant presents a low credit risk. Based on their financial profile, repayment is highly likely. Loan approval is recommended subject to standard verification.',
@@ -654,7 +654,7 @@
     const data = {};
     const fields = ['AMT_CREDIT','AMT_INCOME_TOTAL','AMT_ANNUITY','AMT_GOODS_PRICE',
                     'EXT_SOURCE_1','EXT_SOURCE_2','EXT_SOURCE_3','CODE_GENDER',
-                    'NAME_EDUCATION_TYPE','FLAG_OWN_CAR'];
+                    'NAME_EDUCATION_TYPE','FLAG_OWN_CAR','DAYS_BIRTH','DAYS_EMPLOYED'];
 
     fields.forEach(f => {
       const el = document.getElementById(f);
@@ -664,11 +664,6 @@
         else data[f] = parseFloat(el.value);
       }
     });
-
-    const age = document.getElementById('DAYS_BIRTH');
-    if (age && age.value !== '') data['DAYS_BIRTH'] = -(parseInt(age.value) * 365);
-    const emp = document.getElementById('DAYS_EMPLOYED');
-    if (emp && emp.value !== '') data['DAYS_EMPLOYED'] = -(parseInt(emp.value) * 365);
 
     try {
       const res = await fetch(API_URL, {
